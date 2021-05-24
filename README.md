@@ -1,11 +1,8 @@
 # TheShop
 TheShop DevMountain Personal Project
 
-# TheShop
-TheShop DevMountain Personal Project
-
 ## Things I did before we started
-1. ran `npx create-react-app wlr1-final-full-stack` and cd'd into it
+1. ran `npx create-react-app app-name` and cd'd into it
 2. added `.env` to `.gitignore` file
 3. created a components folder with skeleton components for Header, Dash, Products, Cart and Auth
 4. Cleared out default info in `./src/App.js`
