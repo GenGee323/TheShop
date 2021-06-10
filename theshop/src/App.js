@@ -1,7 +1,7 @@
 import {useEffect} from 'react'
 import './App.css';
 import routes from './routes'
-import Navigation from './components/Header'
+import Header from './components/Header'
 import {useDispatch} from 'react-redux'
 import {setUser} from './redux/authReducer'
 import {setCart} from './redux/cartReducer'
@@ -18,14 +18,14 @@ function App() {
     }).catch((err) => {
       console.log(err.response)
     })
-  }, [])
+  }, [dispatch])// not working without dispatch
   return (
     <div className="App">
-      <Navigation/>
+      <Header/>
       {routes}
       <GlobalStyle/>
     </div>
-  );
+  )
 }
 
 export default App

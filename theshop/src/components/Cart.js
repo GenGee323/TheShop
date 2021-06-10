@@ -1,6 +1,6 @@
 import {useEffect} from 'react'
 import axios from 'axios'
-
+import React from 'react'
 // action builders.
 import {useSelector, useDispatch} from 'react-redux'
 import {setCart} from '../redux/cartReducer'
@@ -21,7 +21,7 @@ const Cart = (props) => {
         props.history.push('/auth')
       }
     })
-  }, [dispatch])
+  }, [dispatch, props.history]) //<-- dispatch not working
 
   const handleDeleteFromCart = (product_id) => {
     axios.delete(`/api/cart/${product_id}`)
@@ -70,6 +70,8 @@ const Cart = (props) => {
           </div>
         )
       })}
+       <p> Total: </p>
+      <button> Check Out </button>
     </div>
   )
 }

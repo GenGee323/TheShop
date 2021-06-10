@@ -1,4 +1,5 @@
 const bcrypt = require('bcryptjs')
+const mailer= require('../nodemailer')
 
 module.exports = {
   register: async (req, res) => {

@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     background:#407BAD;
     font-family: Arial, Helvetica, sans-serif;
-    text-align:center
+    text-align:center;
   }
   button{
       background:#4F93DE;
@@ -71,10 +71,22 @@ nav{
     display: inline-block;
     justify-content:space-between;
 }
-  article{
+article{
     size:50%;
     border: solid #E3F2F2 10px ;
   }
+
+.links{
+margin-left: 20px;
+margin-top: 40px;
+box-shadow: 0px 22px 16px -7px #276873;
+height: 20px;
+border-radius: 4%;
+}
+
+.links{
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 `;
- 
 export default GlobalStyle;

@@ -14,7 +14,8 @@ CREATE TABLE products (
   product_id SERIAL PRIMARY KEY,
   product_name VARCHAR(100),
   product_description VARCHAR(1000),
-  product_image VARCHAR(2000)
+  product_image VARCHAR(2000),
+  product_prce INTEGER (100)
 );
 
 CREATE TABLE carts (
