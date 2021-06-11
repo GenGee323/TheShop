@@ -2,16 +2,16 @@ require('dotenv').config()
 const express = require('express')
 const massive = require('massive')
 const session = require('express-session')
-const aws = require('aws-sdk');
+// const aws = require('aws-sdk')
 
 const {CONNECTION_STRING, SESSION_SECRET, SERVER_PORT} = process.env
 
 
-const {
-  S3_BUCKET,
-  AWS_ACCESS_KEY_ID,
-  AWS_SECRET_ACCESS_KEY
-} = process.env
+// const {
+//   S3_BUCKET,
+//   AWS_ACCESS_KEY_ID,
+//   AWS_SECRET_ACCESS_KEY
+// } = process.env
 
 // CONTROLLERS
 
@@ -51,10 +51,10 @@ massive({
 // ENDPOINTS
 //Auth
 
-app.post('/auth/register', authCtrl.register)
-app.post('/auth/login', authCtrl.login)
-app.get('/auth/logout', authCtrl.logout)
-app.get('/auth/me', authCtrl.getUser)
+app.post('/api/register', authCtrl.register)
+app.post('/api/login', authCtrl.login)
+app.get('/api/logout', authCtrl.logout)
+app.get('/api/me', authCtrl.getUser)
 
 // PRODUCTS
 
@@ -68,35 +68,35 @@ app.delete('/api/cart/:product_id', cartCtrl.deleteItemFromCart)
 app.put('/api/cart/:product_id', cartCtrl.changeCartQty)
 
 
-app.get('/sign-s3', (req, res) => {
+// app.get('/sign-s3', (req, res) => {
 
-  aws.config = {
-    region: 'us-west-1',
-    accessKeyId: AWS_ACCESS_KEY_ID,
-    secretAccessKey: AWS_SECRET_ACCESS_KEY
-  }
+//   aws.config = {
+//     region: 'us-west-1',
+//     accessKeyId: AWS_ACCESS_KEY_ID,
+//     secretAccessKey: AWS_SECRET_ACCESS_KEY
+//   }
   
-  const s3 = new aws.S3();
-  const fileName = req.query['file-name'];
-  const fileType = req.query['file-type'];
-  const s3Params = {
-    Bucket: S3_BUCKET,
-    Key: fileName,
-    Expires: 60,
-    ContentType: fileType,
-    ACL: 'public-read'
-  };
+//   const s3 = new aws.S3();
+//   const fileName = req.query['file-name'];
+//   const fileType = req.query['file-type'];
+//   const s3Params = {
+//     Bucket: S3_BUCKET,
+//     Key: fileName,
+//     Expires: 60,
+//     ContentType: fileType,
+//     ACL: 'public-read'
+//   };
 
-  s3.getSignedUrl('putObject', s3Params, (err, data) => {
-    if(err){
-      console.log(err);
-      return res.end();
-    }
-    const returnData = {
-      signedRequest: data,
-      url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
-    };
+//   s3.getSignedUrl('putObject', s3Params, (err, data) => {
+//     if(err){
+//       console.log(err);
+//       return res.end();
+//     }
+//     const returnData = {
+//       signedRequest: data,
+//       url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
+//     };
 
-    return res.send(returnData)
-  });
-});
+//     return res.send(returnData)
+//   });
+// });

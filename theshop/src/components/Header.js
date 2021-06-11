@@ -1,5 +1,8 @@
 import {Link} from 'react-router-dom'
 import axios from 'axios'
+import './Header.css'
+
+
 
 const Header = () => {
 
@@ -7,7 +10,8 @@ const Header = () => {
     axios.get('/api/logout')}
 
   return(
-    <header>
+    <section>
+      <header>
       <ul className= "nav">
       <Link to='/'> The Shop </Link>
       <Link to='/auth'> Welcome </Link>
@@ -17,6 +21,7 @@ const Header = () => {
       <Link to ='/auth' onclick={handleLogout}> Logout</Link>
     </ul>
     </header>
+    </section>
   )
 }
 

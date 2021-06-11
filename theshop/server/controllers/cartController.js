@@ -20,11 +20,12 @@ module.exports = {
       const db = req.app.get('db')
       const {user} = req.session
       const {product_id} = req.params
+      const {quantity} = res.body
       if(!user){
         return res.status(511).send("User is not logged in.")
       }
     
-      db.cart.add_to_cart(user.cart_id, product_id)
+      db.cart.add_to_cart(user.cart_id, product_id, quantity)
       .then((cart) => {
         res.status(200).send(cart)
       }).catch(err => {

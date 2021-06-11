@@ -12,6 +12,6 @@ export default (
     <Route path='/auth' component={Auth} />
     <Route path='/cart' component={Cart} />
     <Route path='/about' component={About}/>
-    <Route path="/products" component={Products} />
+    <Route path='/products' component={Products} />
   </Switch>
 )

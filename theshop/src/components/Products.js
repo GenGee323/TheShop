@@ -9,7 +9,7 @@ const Products = (props) => {
   
   const [products, setProducts] = useState([])
 
-  const {user} = useSelector((store) => store.auth)
+  const {user} = useSelector((store) => store.authReducer)
   const {cart} = useSelector((store) => store.cartReducer)
   const dispatch = useDispatch()
 

@@ -1,5 +1,5 @@
 const bcrypt = require('bcryptjs')
-const mailer= require('../nodemailer')
+// const mailer= require('../nodemailer')
 
 module.exports = {
   register: async (req, res) => {
@@ -35,11 +35,11 @@ module.exports = {
     req.session.user.cart_id = cart.cart_id
     return res.status(200).send(req.session.user)
   },
-  logout: (req, res) => {
+  logout: async (req, res) => {
     req.session.destroy()
     res.sendStatus(200)
   },
-  getUser: (req, res) => {
+  getUser: async (req, res) => {
     const db = req.app.get('db')
     const {user} = req.session
     if(!user){

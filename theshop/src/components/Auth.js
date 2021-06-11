@@ -13,7 +13,7 @@ const Auth = (props) => {
 
 
   const handleRegister = () => {
-    axios.post('/auth/register', {email, password})
+    axios.post('/api/register', {email, password})
     .then((res) => {
       dispatch(setUser(res.data))
       axios.get('/api/cart').then((response) =>{
@@ -26,7 +26,7 @@ const Auth = (props) => {
 
 
   const handleLogin = () => {
-    axios.post('/auth/login', {email, password})
+    axios.post('/api/login', {email, password})
     .then((res) => {
       console.log(res.data)
       dispatch(setUser(res.data))

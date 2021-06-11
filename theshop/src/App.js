@@ -1,5 +1,5 @@
 import {useEffect} from 'react'
-import './App.css';
+import './App.css'
 import routes from './routes'
 import Header from './components/Header'
 import {useDispatch} from 'react-redux'
@@ -12,7 +12,7 @@ function App() {
  
   const dispatch = useDispatch()
   useEffect(() => {
-    axios.get('/auth/me').then(res => {
+    axios.get('/api/me').then(res => {
       dispatch(setUser(res.data.user))
       dispatch(setCart(res.data.cart))
     }).catch((err) => {

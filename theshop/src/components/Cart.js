@@ -4,6 +4,7 @@ import React from 'react'
 // action builders.
 import {useSelector, useDispatch} from 'react-redux'
 import {setCart} from '../redux/cartReducer'
+import './Cart.css'
 
 const Cart = (props) => {
 

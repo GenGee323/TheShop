@@ -3,8 +3,8 @@ import authReducer from './authReducer'
 import cartReducer from './cartReducer'
 
 const rootReducer = combineReducers({
-  auth: authReducer,
-  cartReducer
+  authReducer: authReducer,
+  cartReducer: cartReducer
 })
 
 export default createStore(rootReducer)
