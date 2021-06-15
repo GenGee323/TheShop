@@ -12,7 +12,7 @@ function App() {
  
   const dispatch = useDispatch()
   useEffect(() => {
-    axios.get('/api/me').then(res => {
+    axios.get('/auth/me').then(res => {
       dispatch(setUser(res.data.user))
       dispatch(setCart(res.data.cart))
     }).catch((err) => {

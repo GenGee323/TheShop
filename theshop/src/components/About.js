@@ -8,7 +8,7 @@ const About =() => {
             <br/>
             <body>
          <section>
-          <article>
+          <article className= 'aboutDiv'>
             <h2>About Us</h2>
            
               <br/>
