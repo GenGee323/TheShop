@@ -38,10 +38,10 @@ const Auth = (props) => {
     .catch(err => console.log(err))
   }
 
- 
+
 
   return(
-    <div>
+    <div className="login_main">
       <h1>Welcome</h1>
   <body>
     <br/>

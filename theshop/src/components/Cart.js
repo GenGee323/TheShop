@@ -58,6 +58,7 @@ const Cart = (props) => {
 
   return(
     <div>
+      <body>       
       <h1>Shopping Cart</h1>
      
       {cart.map((product) => {
@@ -67,12 +68,14 @@ const Cart = (props) => {
             <h5>Qty: {product.quantity}</h5>
             <button onClick={() => handleDeleteFromCart(product.product_id)}> X </button>
             <button onClick={() => handleChangeQty(product.product_id, product.quantity - 1)}> - </button>
-            <button onClick={() => handleChangeQty(product.product_id, product.quantity + 1)}> + </button>
+            <button onClick={() => handleChangeQty(product.product_id, product.quantity + 1)}> + </button> 
+            
+            <p> Total: </p>
+      <button> Check Out </button>
           </div>
         )
       })}
-       <p> Total: </p>
-      <button> Check Out </button>
+      </body>
     </div>
   )
 }

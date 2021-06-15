@@ -3,6 +3,7 @@ import axios from 'axios'
 import React from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {setCart} from '../redux/cartReducer'
+import './Products.css'
 
 
 const Products = (props) => {
@@ -62,17 +63,24 @@ const Products = (props) => {
       <h1>Products</h1>
       {products.map((products) => {
         return (
+          <div> 
+            <img src='' alt='product image' />
+      
           <div key={products.product_id}>
             <h4>{products.product_name}</h4>
             <p>{products.product_description}</p>
             <p>$ {products.product.price}</p>
             {user && <button onClick={() => handleAddToCart(products.product_id)}>Add To Cart</button>}
           </div>
+          </div>
         )
-      })}
+      }
+      )
+      }
     </div>
   )
-}
+};
+
 
 
 export default Products

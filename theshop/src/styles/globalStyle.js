@@ -36,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1{
-      color: #30627C;
+      color: white;
   }
 
   div{

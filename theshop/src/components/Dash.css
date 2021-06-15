@@ -1,6 +1,13 @@
-.dasImg{
-border:auto;
-margin: auto;
-text-align: center;
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+}
+.userDashboard {
+    background-color: #F4F8F2;
+    
+}
+.user_profile {
+    margin: 0 auto;
 }

@@ -15,7 +15,7 @@ CREATE TABLE products (
   product_name VARCHAR(100),
   product_description VARCHAR(1000),
   product_image VARCHAR(2000),
-  product_prce INTEGER (100)
+  product_prce VARCHAR (100)
 );
 
 CREATE TABLE carts (
